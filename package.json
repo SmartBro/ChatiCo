@@ -1,0 +1,78 @@
+{
+  "name": "chati-co",
+  "version": "0.0.0",
+  "description": "Free cross-platform chat",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node_modules/.bin/webpack-dev-server --content-base build/",
+    "lint": "node_modules/.bin/eslint src",
+    "start": "node_modules/.bin/babel-node src/server/index.js --presets es2015,stage-2",
+    "test": "karma start src/test/karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SmartBro/ChatiCo.git"
+  },
+  "keywords": [
+    "chat",
+    "angular2",
+    "koa",
+    "webpack",
+    "socket.io"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SmartBro/ChatiCo/issues"
+  },
+  "homepage": "https://github.com/SmartBro/ChatiCo#readme",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.7",
+    "es6-promise": "^3.1.2",
+    "es6-shim": "^0.33.13",
+    "koa": "^1.1.2",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.2",
+    "zone.js": "^0.5.15"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^5.0.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-angular2-annotations": "^5.0.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.2.0",
+    "eslint-config-bullhorn": "0.0.22",
+    "eslint-loader": "^1.3.0",
+    "file-loader": "^0.8.5",
+    "ghooks": "^1.0.3",
+    "html-webpack-plugin": "^2.9.0",
+    "jasmine-core": "^2.4.1",
+    "jasmine-spec-reporter": "^2.4.0",
+    "karma": "^0.13.21",
+    "karma-jasmine": "^0.3.7",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-webpack": "^1.7.0",
+    "node-sass": "^3.4.2",
+    "phantomjs": "^2.1.3",
+    "phantomjs-prebuilt": "^2.1.4",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "util": "^0.10.3",
+    "webdriver-manager": "^8.0.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}
