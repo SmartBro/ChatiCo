@@ -72,6 +72,8 @@
     "webpack-dev-server": "^1.14.1"
   },
   "config": {
-    "ghooks": {}
+    "ghooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }
