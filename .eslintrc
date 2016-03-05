@@ -1,11 +1,35 @@
 {
     "extends": "defaults/configurations/google",
+    "parser": "babel-eslint",
     "globals": {
     	"ng": true
     },
     "parserOptions": {
         "ecmaVersion": 6,
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "modules": true,
+            "arrowFunctions": true,
+            "binaryLiterals": true,
+            "blockBindings": true,
+            "classes": true,
+            "defaultParams": true,
+            "destructuring": true,
+            "forOf": true,
+            "generators": true,
+            "objectLiteralComputedProperties": true,
+            "objectLiteralDuplicateProperties": true,
+            "objectLiteralShorthandMethods": true,
+            "objectLiteralShorthandProperties": true,
+            "octalLiterals": true,
+            "regexUFlag": true,
+            "regexYFlag": true,
+            "restParams": true,
+            "spread": true,
+            "superInFunctions": true,
+            "templateStrings": true,
+            "unicodeCodePointEscapes": true
+        }
     },
     "rules": {
     	"indent": [2, 4],
@@ -13,6 +37,8 @@
     },
     "env": {
         "browser": true,
-        "node": true
-    }
+        "node": true,
+        "mocha": true,
+        "es6": true
+    },
 }

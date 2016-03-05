@@ -1,35 +1,15 @@
-const resolve = require('path').resolve;
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-
-const sourceDir = resolve(__dirname, 'src/app');
-const distDir = resolve(__dirname, 'dist/');
-const nodeModules = resolve(__dirname, 'node_modules');
-const pathToAngular = resolve(nodeModules, 'angular2/bundles/angular2.js');
-
-module.exports = {
-    context: sourceDir,
-    entry: './app.js',
-    output: {
-        path: distDir,
-        filename: 'bundle.js'
-    },
-    module: {
-        loaders: [
-            { test: /\.js$/, loader: 'babel-loader'},
-            { test: /\.jade$/, loader: 'jade'}
-        ],
-        noParse: [ pathToAngular ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: resolve(sourceDir, 'index.jade')
-        })
-    ],
-    resolve: {
-        root: sourceDir,
-        alias: {
-            'ng': pathToAngular
-        }
+export function WebpackConfig () {
+    const env = process.env.NODE_ENV || 'dev';
+    const configsFolder = `${__dirname}/webpack-configs`;
+    
+    const configs = {
+        global: require(`${configsFolder}/global.config`),
+        env: require(`${configsFolder}/environments/${env}`)
+    };
+    
+    if(!configs.global || !configs.env){
+        throw new Error(`Can't find config file. Please check your directory`);
     }
-};
+    
+    return Object.assign(configs.global(__dirname), configs.env(__dirname, env));
+}
