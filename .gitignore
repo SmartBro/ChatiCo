@@ -12,6 +12,9 @@ npm-debug.log*
 #OS X
 **/.DS_Store
 
+#DB files
+db/
+
 # Runtime data
 pids
 *.pid
