@@ -3,8 +3,8 @@ const webpack = require('webpack');
 
 const sourceDir = resolve(__dirname, 'src/app');
 const distDir = resolve(__dirname, 'dist/');
-const nodeModules = resolve(__dirname, './node_modules');
-const pathToAngular = resolve(nodeModules, 'angular/angular.min.js');
+const nodeModules = resolve(__dirname, 'node_modules');
+const pathToAngular = resolve(nodeModules, 'angular2/bundles/angular2.js');
 
 module.exports = {
     context: sourceDir,
