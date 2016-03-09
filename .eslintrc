@@ -1,14 +1,15 @@
 {
     "extends": "defaults/configurations/google",
     "globals": {
-    	"angular": true
+    	"ng": true
     },
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module"
     },
     "rules": {
-    	"indent": [2, 4]
+    	"indent": [2, 4],
+        "new-cap": 0
     },
     "env": {
         "browser": true,

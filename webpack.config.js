@@ -1,5 +1,6 @@
 const resolve = require('path').resolve;
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const sourceDir = resolve(__dirname, 'src/app');
 const distDir = resolve(__dirname, 'dist/');
@@ -15,19 +16,20 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.js$/, loader: 'babel-loader'}
+            { test: /\.js$/, loader: 'babel-loader'},
+            { test: /\.jade$/, loader: 'jade'}
         ],
         noParse: [ pathToAngular ]
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            'angular': 'angular'
+        new HtmlWebpackPlugin({
+            template: resolve(sourceDir, 'index.jade')
         })
     ],
     resolve: {
         root: sourceDir,
         alias: {
-            'angular': pathToAngular
+            'ng': pathToAngular
         }
     }
 };

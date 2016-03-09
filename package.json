@@ -55,6 +55,7 @@
     "file-loader": "^0.8.5",
     "ghooks": "^1.0.3",
     "html-webpack-plugin": "^2.9.0",
+    "jade-loader": "^0.8.0",
     "jasmine-core": "^2.4.1",
     "jasmine-spec-reporter": "^2.4.0",
     "karma": "^0.13.21",
